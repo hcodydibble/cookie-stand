@@ -10,17 +10,14 @@ img{
   display: block;
   margin-left: auto;
   margin-right: auto;
-  /*background-color: rgba(255,255,255,0.5);*/
 }
 
 #image{
-  /*background-color: rgba(255,255,255,0.5);*/
   background-color: rgb(226, 194, 176);
   margin-bottom: 0;
 }
 
 nav{
-  /*background-color: rgba(255,255,255,0.4);*/
   background-color: rgb(226, 194, 176);
   float: left;
   height: 10em;
@@ -32,7 +29,6 @@ nav{
 
 #hours{
   float: right;
-  /*background-color: rgba(255,255,255,0.4);*/
   background-color: rgb(226, 194, 176);
   padding: 1em;
   text-align: center;
@@ -61,4 +57,39 @@ h1{
   height: 15em;
   border-radius: 4em;
   border-style: solid;
+}
+
+#seatac{
+  background-color: rgb(226, 194, 176);
+  border-radius: 0.8em;
+}
+
+#pike{
+  background-color: rgb(226, 194, 176);
+  border-radius: 0.8em;
+}
+
+#center{
+  background-color: rgb(226, 194, 176);
+  border-radius: 0.8em;
+}
+
+#capHill{
+  background-color: rgb(226, 194, 176);
+  border-radius: 0.8em;
+}
+
+#alkiShop{
+  background-color: rgb(226, 194, 176);
+  border-radius: 0.8em;
+}
+
+ul{
+  columns: 3
+}
+
+h2{
+font-family: 'Lobster',cursive;
+text-align: center;
+background-color: rgb(226, 194, 176);
 }
