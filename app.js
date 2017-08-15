@@ -14,7 +14,8 @@ var firstAndPike = {
   salesPerHour: function(){
     var totalSales = 0;
     for(var i = 0; i < 15; i++){
-      var foo = this.custPerHour() * Math.floor(this.aveCookiePerCust);
+      var foo = Math.floor(this.custPerHour() * this.aveCookiePerCust);
+      // var foo = this.custPerHour() * Math.floor(this.aveCookiePerCust);
       totalSales = (totalSales + foo);
       this.cookiesPerHour.push(foo);
     }
@@ -43,7 +44,7 @@ var seaTacAirport = {
   salesPerHour: function(){
     var totalSales = 0;
     for(var i = 0; i < 15; i++){
-      var foo = this.custPerHour() * Math.floor(this.aveCookiePerCust);
+      var foo = Math.floor(this.custPerHour() * this.aveCookiePerCust);
       totalSales = (totalSales + foo);
       this.cookiesPerHour.push(foo);
     }
@@ -72,7 +73,7 @@ var seattleCenter = {
   salesPerHour: function(){
     var totalSales = 0;
     for(var i = 0; i < 15; i++){
-      var foo = this.custPerHour() * Math.floor(this.aveCookiePerCust);
+      var foo = Math.floor(this.custPerHour() * this.aveCookiePerCust);
       totalSales = (totalSales + foo);
       this.cookiesPerHour.push(foo);
     }
@@ -101,7 +102,7 @@ var capitolHill = {
   salesPerHour: function(){
     for(var i = 0; i < 15; i++){
       var totalSales = 0;
-      var foo = this.custPerHour() * Math.floor(this.aveCookiePerCust);
+      var foo = Math.floor(this.custPerHour() * this.aveCookiePerCust);
       totalSales = (totalSales + foo);
       this.cookiesPerHour.push(foo);
     }
@@ -130,7 +131,7 @@ var alki = {
   salesPerHour: function(){
     var totalSales = 0;
     for(var i = 0; i < 15; i++){
-      var foo = this.custPerHour() * Math.floor(this.aveCookiePerCust);
+      var foo = Math.floor(this.custPerHour() * this.aveCookiePerCust);
       totalSales = (totalSales + foo);
       this.cookiesPerHour.push(foo);
     }
