@@ -100,8 +100,8 @@ var capitolHill = {
     return Math.floor(Math.random() * (this.maxCust - this.minCust) + this.minCust);
   },
   salesPerHour: function(){
+    var totalSales = 0;
     for(var i = 0; i < 15; i++){
-      var totalSales = 0;
       var foo = Math.floor(this.custPerHour() * this.aveCookiePerCust);
       totalSales = (totalSales + foo);
       this.cookiesPerHour.push(foo);
