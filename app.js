@@ -1,6 +1,6 @@
 'use strict';
 
-var timeOfDay = ['6am: ', '7am: ', '8am: ', '9am: ', '10am: ', '11am: ', '12pm: ', '1pm: ', '2pm: ', '3pm: ', '4pm: ', '5pm: ', '6pm: ', '7pm: '];
+var timeOfDay = ['6:00am', '7:00am', '8:00am', '9:00am', '10:00am', '11:00am', '12:00pm', '1:00pm', '2:00pm', '3:00pm', '4:00pm', '5:00pm', '6:00pm', '7:00pm', 'Daily Location Total'];
 var storesOwned = [];
 
 function Store(name,minCust,maxCust,avgCookie){
@@ -46,6 +46,24 @@ var seaTacAirport = new Store('SeaTac Airport',3,24,1.2);
 var seattleCenter = new Store('Seattle Center',11,38,3.7);
 var capitolHill = new Store('Capitol Hill',20,38,2.3);
 var alkiStore = new Store('Alki',2,16,4.6);
+
+// var tableUgh = document.getElementById('sales_section');
+// var tableBody = document.createElement('table');
+// tableUgh.appendChild(tableBody);
+// var timeRow = document.createElement('tr');
+// tableBody.appendChild(timeRow);
+//
+// for (var i = 0; i < timeOfDay.length; i++) {
+//   var tableData = document.createElement('th');
+//   tableData.innerText = timeOfDay[i];
+//   timeRow.appendChild(tableData);
+// }
+
+// for (var i = 0; i < timeOfDay.length; i++) {
+//   var tableData = document.createElement('td');
+//   tableData.innerText = firstAndPike.name + firstAndPike.salesPerHour();
+//   timeRow.appendChild(tableData);
+// }
 
 for(var i = 0; i < storesOwned.length; i++){
   storesOwned[i].salesPerHour();
