@@ -1,7 +1,7 @@
 'use strict';
 
-var timeOfDay = ['6am: ', '7am: ', '8am: ', '9am: ', '10am: ', '11am: ', '12pm: ', '1pm: ', '2pm: ', '3pm: ', '4pm: ', '5pm: ', '6pm: ', '7pm: ', '8pm: '];
-var pikeList = document.getElementById('1stAndPike');
+var timeOfDay = ['6am: ', '7am: ', '8am: ', '9am: ', '10am: ', '11am: ', '12pm: ', '1pm: ', '2pm: ', '3pm: ', '4pm: ', '5pm: ', '6pm: ', '7pm: ', '8pm: ', 'Total: '];
+// var pikeList = document.getElementById('pike');
 
 var firstAndPike = {
   minCust: 23,
@@ -13,17 +13,24 @@ var firstAndPike = {
   },
   salesPerHour: function(){
     var totalSales = 0;
-    for(i = 0; i < 15; i++){
+    for(var i = 0; i < 15; i++){
       var foo = this.custPerHour() * Math.floor(this.aveCookiePerCust);
       totalSales = (totalSales + foo);
       this.cookiesPerHour.push(foo);
     }
-    goToPage: function(){
-
-    }
     this.cookiesPerHour.push(totalSales);
+  },
+  goToPage: function(){
+    for(var i = 0; i < this.cookiesPerHour.length; i++){
+      var newLi = document.createElement('li');
+      var pikeTime = timeOfDay[i] + this.cookiesPerHour[i] + ' cookies.';
+      newLi.innerText = pikeTime;
+      pike.appendChild(newLi);
+    }
   }
 };
+firstAndPike.salesPerHour();
+firstAndPike.goToPage();
 
 var seaTacAirport = {
   minCust: 3,
