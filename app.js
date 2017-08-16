@@ -47,24 +47,6 @@ var seattleCenter = new Store('Seattle Center',11,38,3.7);
 var capitolHill = new Store('Capitol Hill',20,38,2.3);
 var alkiStore = new Store('Alki',2,16,4.6);
 
-// var tableUgh = document.getElementById('sales_section');
-// var tableBody = document.createElement('table');
-// tableUgh.appendChild(tableBody);
-// var timeRow = document.createElement('tr');
-// tableBody.appendChild(timeRow);
-//
-// for (var i = 0; i < timeOfDay.length; i++) {
-//   var tableData = document.createElement('th');
-//   tableData.innerText = timeOfDay[i];
-//   timeRow.appendChild(tableData);
-// }
-
-// for (var i = 0; i < timeOfDay.length; i++) {
-//   var tableData = document.createElement('td');
-//   tableData.innerText = firstAndPike.name + firstAndPike.salesPerHour();
-//   timeRow.appendChild(tableData);
-// }
-
 for(var i = 0; i < storesOwned.length; i++){
   storesOwned[i].salesPerHour();
   storesOwned[i].goToPage();
