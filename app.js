@@ -26,17 +26,15 @@ function Store(name,minCust,maxCust,avgCookie){
     var salesSectionName = document.createElement('tr');
     salesSectionName.innerText = this.name;
     salesSection.appendChild(salesSectionName);
-    // var salesList = document.createElement('ul');
-    // salesSection.appendChild(salesList);
     for(var i = 0; i < timeOfDay.length; i++){
       var newTd = document.createElement('td');
       var shopSales = this.cookiesPerHour[i];
       newTd.innerText = shopSales;
-      salesSection.appendChild(newTd);
+      salesSectionName.appendChild(newTd);
     }
-    // var listTotal = document.createElement('li');
-    // listTotal.innerText = 'Total: ' + this.totalSales + ' cookies.';
-    // salesList.appendChild(listTotal);
+    var totalTd = document.createElement('td');
+    totalTd.innerText = this.totalSales;
+    salesSectionName.appendChild(totalTd);
   };
   storesOwned.push(this);
 };
@@ -61,16 +59,11 @@ var createTable = function(){
     tableBody.appendChild(timeRow);
   }
   var totalEnd = document.createElement('th');
-  totalEnd.innerText = 'Total Daily Sales';
+  totalEnd.innerText = 'Daily Location Totals';
   tableBody.appendChild(totalEnd);
 };
 createTable();
 
-// firstAndPike.goToPage();
-// seaTacAirport.goToPage();
-// seattleCenter.goToPage();
-// capitolHill.goToPage();
-// alkiStore.goToPage();
 for(var i = 0; i < storesOwned.length; i++){
   storesOwned[i].salesPerHour();
   storesOwned[i].goToPage();
