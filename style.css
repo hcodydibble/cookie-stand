@@ -90,6 +90,10 @@ text-align: center;
 background-color: rgb(226, 194, 176);
 }
 
+table{
+  margin: 0 auto;
+}
+
 tr:nth-child(even){
   background-color: rgb(226, 194, 176);
 }
