@@ -17,7 +17,7 @@ function Store(name,minCust,maxCust,avgCookie){
   this.salesPerHour = function(){
     this.totalSales = 0;
     for(var i = 0; i < timeOfDay.length; i++){
-      var foo = this.custPerHour() * Math.floor(this.aveCookiePerCust);
+      var foo = Math.floor(this.custPerHour() * this.aveCookiePerCust);
       this.totalSales += foo;
       this.cookiesPerHour.push(foo);
     }
@@ -54,7 +54,7 @@ var blankSpace = document.createElement('th');
 blankSpace.innerText = ' ';
 tableBody.appendChild(blankSpace);
 
-var createdHeader = function(){
+var createHeader = function(){
   for (var i = 0; i < timeOfDay.length; i++) {
     var timeRow = document.createElement('th');
     timeRow.innerText = timeOfDay[i];
@@ -64,19 +64,18 @@ var createdHeader = function(){
   totalEnd.innerText = 'Daily Location Totals';
   tableBody.appendChild(totalEnd);
 };
-createdHeader();
+createHeader();
 
-for(var i = 0; i < storesOwned.length; i++){
-  storesOwned[i].salesPerHour();
-  storesOwned[i].goToPage();
-}
-
-for (var i = 0; i < timeOfDay.length; i++) {
-  var hourTotals = storesOwned[0].cookiesPerHour[i] + storesOwned[1].cookiesPerHour[i] + storesOwned[2].cookiesPerHour[i] + storesOwned[3].cookiesPerHour[i] + storesOwned[4].cookiesPerHour[i];
-  hourlyTotals.push(hourTotals);
-}
-
+var grandTotal = 0;
 var createFooter = function(){
+  for (var i = 0; i < timeOfDay.length; i++) {
+    var hourTotals = 0;
+    for(var j = 0; j < storesOwned.length; j ++){
+      hourTotals += storesOwned[j].cookiesPerHour[i];
+    }
+    hourlyTotals.push(hourTotals);
+    grandTotal += hourlyTotals;
+  }
   var totalsHope = document.getElementById('tableHolder');
   var totalsRow = document.createElement('tr');
   totalsRow.innerText = 'Totals';
@@ -91,4 +90,28 @@ var createFooter = function(){
   totalSalesTotal.innerText = storesOwned[0].totalSales + storesOwned[1].totalSales + storesOwned[2].totalSales + storesOwned[3].totalSales + storesOwned[4].totalSales;
   totalsRow.appendChild(totalSalesTotal);
 };
+
+function makeANewShop(event){
+  event.preventDefault();
+  var newStore = new Store();
+  newStore.name = this.elements['storeName'].value;
+  newStore.minCust = this.elements['minCust'].value;
+  newStore.maxCust = this.elements['maxCust'].value;
+  newStore.aveCookiePerCust = this.elements['avgCookie'].value;
+  newStore.salesPerHour();
+  newStore.goToPage();
+}
+var daInput = document.getElementById('dasForm');
+daInput.addEventListener('submit',makeANewShop);
+
+for(var i = 0; i < storesOwned.length; i++){
+  storesOwned[i].salesPerHour();
+  storesOwned[i].goToPage();
+}
+// firstAndPike.goToPage();
+// seaTacAirport.goToPage();
+// seattleCenter.goToPage();
+// capitolHill.goToPage();
+// alkiStore.goToPage();
+// tacoma.goToPage();
 createFooter();
