@@ -9,6 +9,30 @@
     <h1>Salmon Cookie Sales</h1>
     <section id='sales_section'>
     </section>
+    <form id='dasForm'>
+      <table id='formTable'>
+        <tr>
+          <td><label for="storeName">Store Name: </label>
+          <td><input type="text" name="storeName" placeholder="Enter Store Name" />
+        </tr>
+        <tr>
+          <td><label for="minCust">Minimum # of Customers: </label>
+          <td><input type="number" name="minCust" />
+        </tr>
+        <tr>
+          <td><label for="maxCust">Maximum # of Customers: </label>
+          <td><input type="number" name="maxCust" />
+        </tr>
+        <tr>
+          <td><label for="avgCookie">Average # of Cookies per Hour: </label>
+          <td><input type="number" name="avgCookie" step="0.1" />
+        </tr>
+        <tr>
+          <td id='blank'></td>
+          <td><input type="submit" value="Submit" /></td>
+        </tr>
+      </table>
+    </form>
     <img src='images/salmonBruh.png' />
   </body>
   <script src='app.js' type="text/javascript"></script>

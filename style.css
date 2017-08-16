@@ -109,3 +109,10 @@ td{
 th{
   background-color: rgb(226, 194, 176);
 }
+#blank{
+  background-color: rgb(69, 67, 63);
+}
+
+#formTable{
+  border: solid rgb(226, 194, 176) 1px;
+}
