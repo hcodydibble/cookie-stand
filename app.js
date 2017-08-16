@@ -1,6 +1,6 @@
 'use strict';
 
-var timeOfDay = ['6:00am', '7:00am', '8:00am', '9:00am', '10:00am', '11:00am', '12:00pm', '1:00pm', '2:00pm', '3:00pm', '4:00pm', '5:00pm', '6:00pm', '7:00pm', 'Daily Location Total'];
+var timeOfDay = ['6:00am', '7:00am', '8:00am', '9:00am', '10:00am', '11:00am', '12:00pm', '1:00pm', '2:00pm', '3:00pm', '4:00pm', '5:00pm', '6:00pm', '7:00pm'];
 var storesOwned = [];
 
 function Store(name,minCust,maxCust,avgCookie){
@@ -22,21 +22,21 @@ function Store(name,minCust,maxCust,avgCookie){
     }
   };
   this.goToPage = function(){
-    var salesSection = document.getElementById('sales_section');
-    var salesSectionName = document.createElement('h2');
+    var salesSection = document.getElementById('tableHolder');
+    var salesSectionName = document.createElement('tr');
     salesSectionName.innerText = this.name;
     salesSection.appendChild(salesSectionName);
-    var salesList = document.createElement('ul');
-    salesSection.appendChild(salesList);
-    for(var i = 0; i < this.cookiesPerHour.length; i++){
-      var newLi = document.createElement('li');
-      var pikeTime = timeOfDay[i] + this.cookiesPerHour[i] + ' cookies.';
-      newLi.innerText = pikeTime;
-      salesList.appendChild(newLi);
+    // var salesList = document.createElement('ul');
+    // salesSection.appendChild(salesList);
+    for(var i = 0; i < timeOfDay.length; i++){
+      var newTd = document.createElement('td');
+      var shopSales = this.cookiesPerHour[i];
+      newTd.innerText = shopSales;
+      salesSection.appendChild(newTd);
     }
-    var listTotal = document.createElement('li');
-    listTotal.innerText = 'Total: ' + this.totalSales + ' cookies.';
-    salesList.appendChild(listTotal);
+    // var listTotal = document.createElement('li');
+    // listTotal.innerText = 'Total: ' + this.totalSales + ' cookies.';
+    // salesList.appendChild(listTotal);
   };
   storesOwned.push(this);
 };
@@ -47,6 +47,30 @@ var seattleCenter = new Store('Seattle Center',11,38,3.7);
 var capitolHill = new Store('Capitol Hill',20,38,2.3);
 var alkiStore = new Store('Alki',2,16,4.6);
 
+var createTable = function(){
+  var tableLocation = document.getElementById('sales_section');
+  var tableBody = document.createElement('table');
+  tableLocation.appendChild(tableBody);
+  tableBody.id = 'tableHolder';
+  var blankSpace = document.createElement('th');
+  blankSpace.innerText = ' ';
+  tableBody.appendChild(blankSpace);
+  for (var i = 0; i < timeOfDay.length; i++) {
+    var timeRow = document.createElement('th');
+    timeRow.innerText = timeOfDay[i];
+    tableBody.appendChild(timeRow);
+  }
+  var totalEnd = document.createElement('th');
+  totalEnd.innerText = 'Total Daily Sales';
+  tableBody.appendChild(totalEnd);
+};
+createTable();
+
+// firstAndPike.goToPage();
+// seaTacAirport.goToPage();
+// seattleCenter.goToPage();
+// capitolHill.goToPage();
+// alkiStore.goToPage();
 for(var i = 0; i < storesOwned.length; i++){
   storesOwned[i].salesPerHour();
   storesOwned[i].goToPage();
