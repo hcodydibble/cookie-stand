@@ -16,7 +16,7 @@ function Store(name,minCust,maxCust,avgCookie){
   };
   this.salesPerHour = function(){
     this.totalSales = 0;
-    for(var i = 0; i < 14; i++){
+    for(var i = 0; i < timeOfDay.length; i++){
       var foo = this.custPerHour() * Math.floor(this.aveCookiePerCust);
       this.totalSales += foo;
       this.cookiesPerHour.push(foo);
