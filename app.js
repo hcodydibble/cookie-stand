@@ -13,7 +13,7 @@ var firstAndPike = {
   },
   salesPerHour: function(){
     var totalSales = 0;
-    for(var i = 0; i < 15; i++){
+    for(var i = 0; i < timeOfDay.length; i++){
       var foo = Math.floor(this.custPerHour() * this.aveCookiePerCust);
       // var foo = this.custPerHour() * Math.floor(this.aveCookiePerCust);
       totalSales = (totalSales + foo);
