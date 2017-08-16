@@ -108,10 +108,5 @@ for(var i = 0; i < storesOwned.length; i++){
   storesOwned[i].salesPerHour();
   storesOwned[i].goToPage();
 }
-// firstAndPike.goToPage();
-// seaTacAirport.goToPage();
-// seattleCenter.goToPage();
-// capitolHill.goToPage();
-// alkiStore.goToPage();
-// tacoma.goToPage();
+
 createFooter();
