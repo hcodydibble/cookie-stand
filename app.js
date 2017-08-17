@@ -95,11 +95,12 @@ function makeANewShop(event){
   event.preventDefault();
   var newStore = new Store();
   newStore.name = this.elements['storeName'].value;
-  newStore.minCust = this.elements['minCust'].value;
-  newStore.maxCust = this.elements['maxCust'].value;
-  newStore.aveCookiePerCust = this.elements['avgCookie'].value;
+  newStore.minCust = parseInt(this.elements['minCust'].value);
+  newStore.maxCust = parseInt(this.elements['maxCust'].value);
+  newStore.aveCookiePerCust = parseFloat(this.elements['avgCookie'].value);
   newStore.salesPerHour();
   newStore.goToPage();
+  dasForm.reset();
 }
 var daInput = document.getElementById('dasForm');
 daInput.addEventListener('submit',makeANewShop);
