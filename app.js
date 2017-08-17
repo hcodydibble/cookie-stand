@@ -74,7 +74,7 @@ var createFooter = function(){
       hourTotals += storesOwned[j].cookiesPerHour[i];
     }
     hourlyTotals.push(hourTotals);
-    grandTotal += hourlyTotals;
+    grandTotal += hourTotals;
   }
   var totalsHope = document.getElementById('tableHolder');
   var totalsRow = document.createElement('tr');
@@ -87,7 +87,7 @@ var createFooter = function(){
     totalsRow.appendChild(newTd);
   }
   var totalSalesTotal = document.createElement('td');
-  totalSalesTotal.innerText = storesOwned[0].totalSales + storesOwned[1].totalSales + storesOwned[2].totalSales + storesOwned[3].totalSales + storesOwned[4].totalSales;
+  totalSalesTotal.innerText = grandTotal;
   totalsRow.appendChild(totalSalesTotal);
 };
 
